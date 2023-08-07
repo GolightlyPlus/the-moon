@@ -50,7 +50,7 @@ const App = () => {
           <Card color="primary" variant="soft">
             <CardContent>
               <Typography level="h3">
-                Moon phase: {moonData.Illumination * 100}%
+                Moon phase: {(moonData.Illumination * 100).toFixed(0)}%
               </Typography>
               <Typography level="body-lg" textAlign={'center'}>
                 {moonData.Phase}
