@@ -5,9 +5,11 @@ import {
   Grid,
   Card,
   CardContent,
-  LinearProgress
+  LinearProgress,
+  Divider
 } from '@mui/joy';
 import { CssVarsProvider } from '@mui/joy/styles';
+import dayjs from 'dayjs';
 
 import background from './images/space.jpeg';
 import { useEffect, useState } from 'react';
@@ -48,12 +50,19 @@ const App = () => {
       >
         <Grid>
           <Card color="primary" variant="soft">
-            <CardContent>
-              <Typography level="h3">
-                Moon phase: {(moonData.Illumination * 100).toFixed(0)}%
+            <CardContent sx={{ textAlign: 'center' }}>
+              <Typography level="h3">{moonData.Moon[0]}</Typography>
+              <Typography level="h4">
+                {(moonData.Illumination * 100).toFixed(0)}% illuminated
               </Typography>
-              <Typography level="body-lg" textAlign={'center'}>
-                {moonData.Phase}
+              <Typography level="body-lg">{moonData.Phase}</Typography>
+              <Divider sx={{ my: 1 }} />
+              <Typography level="body-xs">
+                next full moon
+                <br />
+                {dayjs(moonData.TargetDate * 1000)
+                  .add(30 - moonData.Age, 'days')
+                  .format('MMMM D YYYY, h:mm:ss a')}
               </Typography>
             </CardContent>
           </Card>
