@@ -35,6 +35,8 @@ const App = () => {
     return <LinearProgress />;
   }
 
+  // console.log(moonData);
+
   return (
     <CssVarsProvider defaultMode="system">
       <CssBaseline />
@@ -58,11 +60,10 @@ const App = () => {
               <Typography level="body-lg">{moonData.Phase}</Typography>
               <Divider sx={{ my: 1 }} />
               <Typography level="body-xs">
-                next full moon
-                <br />
+                next new moon:{' '}
                 {dayjs(moonData.TargetDate * 1000)
                   .add(30 - moonData.Age, 'days')
-                  .format('MMMM D YYYY, h:mm:ss a')}
+                  .format('MMMM D YYYY')}
               </Typography>
             </CardContent>
           </Card>
