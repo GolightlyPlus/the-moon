@@ -6,7 +6,8 @@ import {
   Card,
   CardContent,
   LinearProgress,
-  Divider
+  Divider,
+  Stack
 } from '@mui/joy';
 import { CssVarsProvider } from '@mui/joy/styles';
 import dayjs from 'dayjs';
@@ -59,12 +60,22 @@ const App = () => {
               </Typography>
               <Typography level="body-lg">{moonData.Phase}</Typography>
               <Divider sx={{ my: 1 }} />
-              <Typography level="body-xs">
-                next new moon:{' '}
-                {dayjs(moonData.TargetDate * 1000)
-                  .add(30 - moonData.Age, 'days')
-                  .format('MMMM D YYYY')}
-              </Typography>
+              <Stack justifyContent="space-between" direction="row" spacing={3}>
+                <Typography level="body-xs">next full moon 🌕</Typography>
+                <Typography level="body-xs">
+                  {dayjs(moonData.TargetDate * 1000)
+                    .add(15 - moonData.Age, 'days')
+                    .format('MMMM D YYYY')}
+                </Typography>
+              </Stack>
+              <Stack justifyContent="space-between" direction="row" spacing={3}>
+                <Typography level="body-xs">next new moon 🌑</Typography>
+                <Typography level="body-xs">
+                  {dayjs(moonData.TargetDate * 1000)
+                    .add(30 - moonData.Age, 'days')
+                    .format('MMMM D YYYY')}
+                </Typography>
+              </Stack>
             </CardContent>
           </Card>
         </Grid>
