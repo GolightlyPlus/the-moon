@@ -61,7 +61,7 @@ const App = () => {
               <Typography level="body-lg">{moonData.Phase}</Typography>
               <Divider sx={{ my: 1 }} />
               <Stack justifyContent="space-between" direction="row" spacing={3}>
-                <Typography level="body-xs">next full moon 🌕</Typography>
+                <Typography level="body-xs">full moon 🌕</Typography>
                 <Typography level="body-xs">
                   {dayjs(moonData.TargetDate * 1000)
                     .add(15 - moonData.Age, 'days')
@@ -69,7 +69,7 @@ const App = () => {
                 </Typography>
               </Stack>
               <Stack justifyContent="space-between" direction="row" spacing={3}>
-                <Typography level="body-xs">next new moon 🌑</Typography>
+                <Typography level="body-xs">new moon 🌑</Typography>
                 <Typography level="body-xs">
                   {dayjs(moonData.TargetDate * 1000)
                     .add(30 - moonData.Age, 'days')
