@@ -1,6 +1,5 @@
 {
-  "short_name": "Moon Phases",
-  "name": "The Moon Phases",
+  "name": "Moon Phases",
   "icons": [
     {
       "src": "moon.png",
